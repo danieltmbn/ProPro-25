@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="tuda.ai1.propro25.view.controller.CreditsMenuController">
+    <stylesheets>
+        <URL value="@/styles/style.css"/>
+        <URL value="@/styles/createGameMenu.css"/>
+        <URL value="@/styles/creditsMenu.css"/>
+    </stylesheets>
+    <BorderPane fx:id="menuBorderPane" BorderPane.alignment="CENTER" >
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        <top>
+            <Label fx:id="titleLabel" text="Credits" styleClass="title-label" BorderPane.alignment="CENTER"/>
+        </top>
+
+        <center>
+            <ScrollPane fitToWidth="true" BorderPane.alignment="CENTER" styleClass="scroll-pane">
+                <VBox spacing="15" maxWidth="560">
+
+                    <!-- Autoren -->
+                    <VBox spacing="5">
+                        <Label text="Dies ist das Programmierprojekt der Veranstaltung Allgemeine Informatik 2025." wrapText="true"/>
+                        <Label text="Autoren / Contributors:" styleClass="section-header"/>
+                        <Label text="Paul Adelmann" />
+                        <Label text="Sebastian Clamer" />
+                        <Label text="Silas Martens" />
+                        <Label text="Fanwei Kong" />
+                        <Label text="Emir Tavukcu" />
+                        <Label text="Aljoscha Kleinau" />
+                        <Label text="Sebastian Kreutzer" />
+                        <Label text="Tim Heldmann" />
+                    </VBox>
+
+                    <!-- Lizenzinformationen -->
+                    <VBox spacing="5">
+                        <Label text="Lizenzen:" styleClass="section-header"/>
+                        <Label wrapText="true" text="Das ProPro Chess darf nicht unerlaubt weitergegeben oder kommerzialisiert werden."/>
+                        <Label wrapText="true" text="Wir verwenden das 'Alpha' Figurenset von Eric Bentzen, welches frei für nicht-kommerzielle Nutzung ist."/>
+                    </VBox>
+
+
+                </VBox>
+            </ScrollPane>
+        </center>
+
+        <bottom>
+            <HBox alignment="BOTTOM_RIGHT">
+                <Button text="Zurück" styleClass="quit-button" onAction="#onBack"/>
+            </HBox>
+        </bottom>
+    </BorderPane>
+</StackPane>

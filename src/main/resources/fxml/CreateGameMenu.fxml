@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="tuda.ai1.propro25.view.controller.CreateGameMenuController">
+    <stylesheets>
+        <URL value="@/styles/style.css"/>
+        <URL value="@/styles/createGameMenu.css"/>
+    </stylesheets>
+    <VBox alignment="CENTER">
+    <BorderPane fx:id="menuBorderPane" BorderPane.alignment="CENTER" >
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        <top>
+            <Label text="Spiel starten" styleClass="title-label" BorderPane.alignment="CENTER" />
+        </top>
+        <center>
+            <VBox spacing="20.0">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <VBox spacing="10.0">
+                    <Label fx:id="minuteLabel" styleClass="normal-text" text="Minuten pro Seite: 5"/>
+                    <Slider fx:id="minuteSlider" max="120" min="1" value="5"/>
+                </VBox>
+                <VBox spacing="10.0">
+                    <Label fx:id="incrementLabel" styleClass="normal-text" text="Inkrement in Sekunden: 0"/>
+                    <Slider fx:id="incrementSlider" max="120"/>
+                </VBox>
+
+                <VBox spacing="10.0">
+                    <ComboBox fx:id="comboBox" onAction="#handleSelection">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Gegen Spieler (Lokal)"/>
+                                <String fx:value="KI (Zufallszug)"/>
+                                <String fx:value="KI (schwach)"/>
+                                <String fx:value="KI (mittel)"/>
+                                <String fx:value="KI (stark)"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </VBox>
+              <!--<Region fx:id="spacer" VBox.vgrow="ALWAYS"/>-->
+                <VBox>
+                    <Label text="FEN:" styleClass="normal-text"/>
+                    <TextField fx:id="fenTextField" promptText="Forsyth-Edwards Notation"/>
+                </VBox>
+
+            </VBox>
+        </center>
+        <bottom>
+            <VBox spacing="20">
+            <HBox spacing="20" alignment="CENTER" BorderPane.alignment="CENTER">
+                <Button fx:id="whiteButton" onAction="#handleWhite" styleClass="blackButton">
+                    <graphic>
+                        <ImageView fx:id="iconWhite" fitWidth="75" fitHeight="75">
+                            <Image url="@/images/white_knight.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+
+                <Button fx:id="blackButton" onAction="#handleBlack" styleClass="blackButton">
+                    <graphic>
+                        <ImageView fx:id="iconBlack" fitWidth="75" fitHeight="75">
+                            <Image url="@/images/black_knight.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <HBox alignment="BOTTOM_RIGHT" >
+                <Button text="Zurück" styleClass="quit-button" onAction="#onBack" />
+            </HBox>
+            </VBox>
+        </bottom>
+    </BorderPane>
+    </VBox>
+</StackPane>

@@ -1,0 +1,107 @@
+.slider .track {
+    -fx-pref-height: 20px;
+    -fx-background-radius: 10px; /* Makes the corners of the track rounded */
+    -fx-padding: 0 0 0 0; /* Optional: to adjust padding */
+    -fx-background-color: #5e5b5b;
+}
+
+.slider .thumb {
+    -fx-background-color: #4CAF50;
+    -fx-background-radius: 50%; /* Makes the thumb circular */
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+}
+
+
+.button.blackButton {
+    -fx-background-color: linear-gradient(to bottom, #4c4949, #1c1c1c); /* same dark gradient */
+    -fx-text-fill: #f5e3a1;
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.button.blackButton:hover {
+    -fx-background-color: linear-gradient(to bottom, #3a3a3a, #232323);
+    -fx-border-color: #f9d976;
+}
+.combo-box {
+    -fx-background-color: linear-gradient(to bottom, #2e2e2e, #1c1c1c);
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: #f5e3a1;
+    -fx-font-family: "Georgia", serif;
+    -fx-font-size: 14px;
+    -fx-padding: 4 8;
+}
+
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #f5e3a1;
+}
+
+.combo-box:hover {
+    -fx-border-color: #f9d976;
+    -fx-background-color: linear-gradient(to bottom, #3a3a3a, #232323);
+}
+
+.combo-box .list-cell {
+    -fx-text-fill:  #f5e3a1;
+}
+.combo-box-popup {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 2;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #1e1e1e;
+    -fx-control-inner-background: #1e1e1e;
+    -fx-border-color: #bfa76f;
+}
+
+.combo-box-popup .list-cell {
+    -fx-text-fill: #f5e3a1;
+    -fx-font-family: "Georgia", serif;
+    -fx-padding: 6 10;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #333333;
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: #bfa76f;
+    -fx-text-fill: #1e1e1e;
+}
+
+.text-field {
+    -fx-background-color: linear-gradient(to bottom, #2e2e2e, #1c1c1c);
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill:  #f5e3a1;        /* text color */
+    -fx-font-family: "Georgia", serif;
+    -fx-font-size: 14px;
+    -fx-padding: 6 10;
+    -fx-cursor: text;
+}
+
+.text-field:focused {
+    -fx-border-color: #b6a549;
+    -fx-background-color: linear-gradient(to bottom, #3a3a3a, #232323);
+}
+
+.text-field:disabled {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #7a7a7a;
+    -fx-border-color: #666;
+}

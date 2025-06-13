@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<TabPane tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="tuda.ai1.propro25.view.controller.ExportViewController" styleClass="menu-pane">
+
+    <stylesheets>
+        <URL value="@/styles/style.css"/>
+        <URL value="@/styles/exportView.css"/>
+    </stylesheets>
+
+    <Tab closable="false" text="FEN">
+        <HBox alignment="CENTER" spacing="30.0">
+            <TextField fx:id="fenOutput" editable="false" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="fenCopyButton" mnemonicParsing="false" onAction="#onFENCopyClicked" text="Kopieren"
+                    styleClass="main-button"/>
+            <padding>
+                <Insets left="20.0" right="20.0"/>
+            </padding>
+        </HBox>
+    </Tab>
+
+    <Tab closable="false" text="PGN">
+        <HBox alignment="CENTER" spacing="30.0">
+            <TextArea fx:id="pgnOutput" editable="false"/>
+            <VBox alignment="BOTTOM_LEFT" spacing="10.0">
+                <Button fx:id="pgnCopyButton" mnemonicParsing="false" onAction="#onPGNCopyClicked" text="Kopieren"
+                        styleClass="main-button"/>
+                <Button fx:id="pgnSaveButton" mnemonicParsing="false" onAction="#onPGNSavedClicked" text="Speichern..."
+                        styleClass="main-button"/>
+            </VBox>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+            </padding>
+        </HBox>
+    </Tab>
+
+</TabPane>

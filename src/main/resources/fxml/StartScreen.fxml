@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<StackPane xmlns="http://javafx.com/javafx/8"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="tuda.ai1.propro25.view.controller.StartMenuController"
+           stylesheets="@../styles/style.css"
+           styleClass="menu-background">
+
+    <BorderPane>
+
+        <!-- Oben links: Bild -->
+        <top>
+            <HBox alignment="TOP_LEFT">
+                <ImageView fx:id="logoImage" fitHeight="100" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/sc-logo_quadrat_gross.png" />
+                    </image>
+                </ImageView>
+            </HBox>
+        </top>
+
+        <!-- Mitte: Menü -->
+        <center>
+            <VBox alignment="CENTER" spacing="15">
+                <Label text="ProPro 2025 Schach" styleClass="title-label"/>
+                <Button text="Spiel starten" onAction="#onStartGame" styleClass="main-button"/>
+                <Button text="Spiel laden (PGN)" onAction="#onLoadGame" styleClass="main-button"/>
+                <Button text="Einstellungen" onAction="#onSettings" styleClass="main-button"/>
+                <Button text="Credits" onAction="#onCredits" styleClass="main-button"/>
+                <Button text="Beenden" onAction="#onExit" styleClass="main-button"/>
+            </VBox>
+        </center>
+
+    </BorderPane>
+
+</StackPane>

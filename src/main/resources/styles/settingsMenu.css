@@ -1,0 +1,55 @@
+.menu-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 20, 0.2, 0, 4);
+}
+
+
+
+#settings-Label {
+
+}
+
+.settings-Label {
+    -fx-font-size: 12pt;
+    -fx-text-fill: #e0c68c;
+}
+
+.resetColor {
+    -fx-pref-width: 150px;
+    -fx-pref-height: 40px;
+    -fx-background-color: linear-gradient(to bottom, #2e2e2e, #1c1c1c); /* same dark gradient */
+    -fx-text-fill: #f5e3a1;
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 2;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+.color-picker {
+    -fx-background-color: #2e2e2e;
+}
+
+.color-picker > .label{
+    -fx-text-fill: #e0c68c;
+}
+
+.check-box .box{
+    -fx-background-color: #2e2e2e;
+    -fx-border-color:  #bfa76f;
+    -fx-border-width: 2;
+    -fx-border-radius: 3;
+}
+.check-box.normal-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-padding: 5px;
+}
+
+.check-box.normal-text > .text {
+    -fx-font-weight: normal;
+    -fx-fill: #333333;
+}
+
+.check-box.normal-text:selected {
+    -fx-mark-color: #bfa76f; /* Farbe des Häkchens */
+}

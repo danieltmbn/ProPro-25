@@ -1,0 +1,100 @@
+plugins {
+    id "java"
+    id "com.diffplug.spotless" version "7.0.3"
+    id 'jacoco'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.1.0'  // JavaFX plugin
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = 'tuda.ai1.propro25'
+version = '0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'tuda.ai1.propro25.Main'
+        )
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.12.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.12.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.12.2'
+
+    implementation "org.openjfx:javafx-controls:17.0.15"
+    implementation "org.openjfx:javafx-media:17.0.15"
+}
+
+javafx {
+    version = "17.0.15"
+    modules = [ 'javafx.controls' , 'javafx.fxml', 'javafx.media']
+}
+
+application {
+    mainClass = 'tuda.ai1.propro25.Main'
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport // report is always generated after test run
+}
+
+sourceSets {
+    test {
+        java {
+            srcDirs = ['src/test/java', 'src/studi-test/java']
+        }
+    }
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+// For code formatting
+spotless {
+    java {
+        target 'src/**/*.java'
+        importOrder()
+        removeUnusedImports()
+        cleanthat()
+        eclipse()
+        formatAnnotations()
+        licenseHeader '/* (C) $YEAR TUDA AI1 team - ProPro 2025 - Chess */'
+    }
+}
+
+//Task um Zip Source Archive vom Projekt zu erstellen
+tasks.register('abgabeZip', Zip) {
+    destinationDirectory = layout.buildDirectory.dir('Abgabe')
+    archiveFileName = "ProProChess.zip"
+    from (projectDir) {
+        include 'src/**/*'
+        include 'gradle/**/*'
+        include '*.settings/**/*'
+        include 'gradlew'
+        include 'gradlew.bat'
+        include 'build.gradle'
+        include 'settings.gradle'
+        include '*.classpath'
+        include '*.project'
+        into(projectDir.name)
+    }
+    doLast {
+        println "Pfad zur Abgabe Zip: $archivePath"
+    }
+}

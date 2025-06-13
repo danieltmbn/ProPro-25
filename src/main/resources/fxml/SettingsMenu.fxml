@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.StackedAreaChart?>
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml">
+    <stylesheets>
+        <URL value="@/styles/style.css"/>
+        <URL value="@/styles/settingsMenu.css"/>
+    </stylesheets>
+    <BorderPane fx:id="menuBorderPane" styleClass="menu-pane">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <top>
+            <Label fx:id="titleLabel" text="Einstellungen" styleClass="title-label" BorderPane.alignment="CENTER"/>
+        </top>
+
+        <center>
+            <HBox alignment="CENTER">
+
+            <VBox fx:id="contentContainer" spacing="20" alignment="TOP_CENTER">
+                <padding>
+                    <Insets top="20" right="10" bottom="40" left="10"/>
+                </padding>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Ton an/aus:" styleClass="normal-text" minWidth="150"/>
+                    <CheckBox fx:id="soundCheckBox" styleClass="normal-text" onAction="#handleSound"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Helle Feldfarbe:" styleClass="normal-text" minWidth="150"/>
+                    <ColorPicker fx:id="lightFieldColorPicker"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Dunkle Feldfarbe:" styleClass="normal-text" minWidth="150"/>
+                    <ColorPicker fx:id="darkFieldColorPicker"/>
+                </HBox>
+
+                <HBox spacing="10" alignment="CENTER">
+                    <Button text="Zurücksetzen" styleClass="resetColor" onAction="#handleResetColors"/>
+                </HBox>
+            </VBox>
+            </HBox>
+        </center>
+
+
+
+        <bottom>
+            <HBox alignment="BOTTOM_RIGHT">
+                <Button text="Zurück" styleClass="quit-button" onAction ="#onBack"/>
+            </HBox>
+        </bottom>
+    </BorderPane>
+</StackPane>

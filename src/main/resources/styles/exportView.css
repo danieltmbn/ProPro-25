@@ -1,0 +1,95 @@
+
+.menu-pane {
+    -fx-background-color: linear-gradient(to bottom, #2e2e2e, #1c1c1c);
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 20, 0.2, 0, 4);
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: linear-gradient(to bottom, #3a3a3a, #1c1c1c);
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 0 0 2 0;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: #e0c68c;
+    -fx-font-weight: bold;
+    -fx-font-family: "Georgia", serif;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #f5e3a1;
+}
+
+.text-field, .text-area {
+    -fx-background-color: #1c1c1c;
+    -fx-text-fill: #e0c68c;
+    -fx-border-color: #bfa76f;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.scroll-pane {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .content {
+    -fx-background-color: #1c1c1c;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: linear-gradient(to bottom, #2e2e2e, #1c1c1c);
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 0 0 2 0;
+}
+
+.tab-pane .headers-region {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 8 16;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #2e2e2e;
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 0 0 2 0;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: #e0c68c;
+    -fx-font-family: "Georgia", serif;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #f5e3a1;
+}
+
+.tab-header-background {
+    /* Nah genug dran, mir egal, muss fertig werden */
+    -fx-background-color: linear-gradient(to bottom, #2d2d2d, #2c2c2c);
+    -fx-border-color: #bfa76f;
+    -fx-border-width: 1 1 1 1;
+}
+
+.text-area {
+    -fx-background-color: #1c1c1c;
+    -fx-text-fill: #e0c68c;
+    -fx-border-color: #bfa76f;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+

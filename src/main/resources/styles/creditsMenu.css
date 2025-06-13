@@ -1,0 +1,17 @@
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.label {
+    -fx-text-fill: #e0c68c;
+}
+
+
+.section-header {
+    -fx-font-weight: bold;
+}
+
