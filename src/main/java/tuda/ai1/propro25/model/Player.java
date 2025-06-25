@@ -10,8 +10,33 @@ import java.util.Objects;
 public class Player {
 
 	// TODO: Aufgabe 1.5
+	private final String name;
+	private final Color color;
+	private int remainingMilliseconds;
+	
+	public Player(String name, Color color, int remainingMilliseconds) {
+		
+		if(name == null || name =="" || color == null || remainingMilliseconds < 0) {
+			throw new IllegalArgumentException("Name und color kann nicht null sein und remainingMilliseconds muss groesser als 0!");
+		}
+		
+		this.name = name;
+		this.color = color;
+		this.remainingMilliseconds = remainingMilliseconds;
+	}
 
 	// TODO: Aufgabe 1.6
+	public String getName() {
+		return name;
+	}
+	
+	public Color getColor() {
+		return color;
+	}
+	
+	public int getRemainingTime() {
+		return remainingMilliseconds;
+	}
 
 	// TODO: Aufgabe 1.7
 

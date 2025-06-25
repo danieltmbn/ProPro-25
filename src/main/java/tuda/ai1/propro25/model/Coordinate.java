@@ -46,8 +46,20 @@ public final class Coordinate {
 	}
 
 	// TODO: Aufgabe 1.3
+	
+	public boolean isOnboard() {
+		if(file < 0 || file > 7 || rank < 0 || rank > 7) {
+			return false;
+		}
+		return true;
+	}
 
 	// TODO: Aufgabe 1.4
+	
+	@Override
+	public String toString() {
+		return getAlgebraicNotation();
+	}
 
 	@Override
 	public boolean equals(Object obj) {
