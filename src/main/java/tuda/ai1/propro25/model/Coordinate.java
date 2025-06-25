@@ -30,6 +30,20 @@ public final class Coordinate {
 	}
 
 	// TODO: Aufgabe 1.2
+	
+	public String getAlgebraicNotation() {
+		String [] spalten = {"a", "b", "c", "d", "e", "f", "g", "h"}; //Speichern die Buchstaben der Spalte
+		
+		//Uberprueft ob das Argument valid ist
+		if(file < 0 || file > 7 || rank < 0 || rank > 7) {
+			throw new IllegalArgumentException("Invalid Koordinat");
+		}
+		
+		String spaltenBuchstaben = spalten [file]; //Umwandel file um Buchstaben
+		int zeileNummer = rank + 1; //Rank fang von 0 an. wir addieren 1, sodass es von 0 bis 8 laeuft
+		
+		return spaltenBuchstaben + zeileNummer; //z.B file = 1; rank = 2. liefert "b3" als String zurueck
+	}
 
 	// TODO: Aufgabe 1.3
 
