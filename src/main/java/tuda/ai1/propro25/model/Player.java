@@ -39,6 +39,13 @@ public class Player {
 	}
 
 	// TODO: Aufgabe 1.7
+	
+	public void setRemainingTime(int time) {
+		if(time < 0) {
+			throw new IllegalArgumentException("Parameter time darf nicht negativ sein!");
+		}
+		this.remainingMilliseconds = time;
+	}
 
 	/**
 	 * Verringert die verbleibende Zeit des Spielers um die angegebene Dauer in
@@ -59,7 +66,15 @@ public class Player {
 	@Override
 	public boolean equals(Object o) {
 		// TODO: Aufgabe 1.8
-		return false;
+		if(o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		
+		Player other = (Player) o;
+		
+		return Objects.equals(name, other.getName()) 
+				&& Objects.equals(color, other.getColor()) 
+				&& Objects.equals(remainingMilliseconds, other.getRemainingTime());
 	}
 
 	@Override
