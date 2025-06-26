@@ -12,8 +12,15 @@ import tuda.ai1.propro25.model.*;
 public class Knight extends Piece {
 
 	// TODO: Aufgabe 2.1
+	public Knight(Color color) {
+		super(color, 3);
+	}
 
 	// TODO: Aufgabe 2.2
+	@Override
+	public char getAlgebraicNotationSymbol() {
+		return 'N';
+	}
 
 	@Override
 	public List<Move> getPseudolegalMoves(Coordinate currentCoordinate, Board board) {
