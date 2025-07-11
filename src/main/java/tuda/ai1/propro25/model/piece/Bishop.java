@@ -17,7 +17,7 @@ public class Bishop extends SlidingPiece {
 	@Override
 	public char getAlgebraicNotationSymbol() {
 		return 'B';
-		//hello!!
+		//hello
 	}
 
 	@Override
