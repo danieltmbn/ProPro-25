@@ -19,13 +19,12 @@ public class Knight extends Piece {
 	// TODO: Aufgabe 2.2
 	@Override
 	public char getAlgebraicNotationSymbol() {
-		
-		//hello
+		return 'N';
 	}
 
 	@Override
 	public List<Move> getPseudolegalMoves(Coordinate currentCoordinate, Board board) {
 		// TODO: Aufgabe 2.3
-		return new ArrayList<>();// Done deal
+		return new ArrayList<>();
 	}
 }
