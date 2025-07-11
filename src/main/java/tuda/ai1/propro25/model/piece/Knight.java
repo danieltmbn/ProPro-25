@@ -20,6 +20,7 @@ public class Knight extends Piece {
 	@Override
 	public char getAlgebraicNotationSymbol() {
 		return 'N';
+		//hello
 	}
 
 	@Override
