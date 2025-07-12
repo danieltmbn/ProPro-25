@@ -24,22 +24,41 @@ public class Player {
 		this.color = color;
 		this.remainingMilliseconds = remainingMilliseconds;
 	}
-
+	
+	/**
+	 * Ein Method, um den Namen eines Players zu erhalten
+	 * @return liefert Name zurueck
+	 */
+	
 	// TODO: Aufgabe 1.6
 	public String getName() {
 		return name;
 	}
 	
+	/**
+	 * Ein Method, um den Spielerseite eines Players zu erhalten
+	 * @return liefert Color zurueck
+	 */
+	
 	public Color getColor() {
 		return color;
 	}
+	
+	/**
+	 * Ein Method, um die uebrige Zeit eines Players zu erhalten
+	 * @return liefert Zeit in Millisekunden zurueck
+	 */
 	
 	public int getRemainingTime() {
 		return remainingMilliseconds;
 	}
 
-	// TODO: Aufgabe 1.7
+	/**
+	 * Setzen die uebrige Zeit von Player.
+	 * @param time Zeit in Millisekunden
+	 */
 	
+	// TODO: Aufgabe 1.7
 	public void setRemainingTime(int time) {
 		if(time < 0) {
 			throw new IllegalArgumentException("Parameter time darf nicht negativ sein!");
@@ -63,6 +82,12 @@ public class Player {
 		this.remainingMilliseconds -= duration;
 	}
 
+	/**
+	 * Vergleichen zwei Objekte ob sie sind gleich. Zwei Objekte können nur dann gleich sein, 
+	 * wenn sie derselben Klasse angehören. Es ist ein Override von Method equals von Klasse Objects
+	 * @return liefert ob zwei Objekte gleich sind.
+	 */
+	
 	@Override
 	public boolean equals(Object o) {
 		// TODO: Aufgabe 1.8

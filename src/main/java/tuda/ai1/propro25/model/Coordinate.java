@@ -29,8 +29,12 @@ public final class Coordinate {
 		return rank;
 	}
 
-	// TODO: Aufgabe 1.2
+	/**
+	 * Ein Method, um ein algebraische Schach Notation zu erhalten
+	 * @return Ein Schach Notation. z.B file = 1, rank = 2 gleich "b3"
+	 */
 	
+	// TODO: Aufgabe 1.2
 	public String getAlgebraicNotation() {
 		String [] spalten = {"a", "b", "c", "d", "e", "f", "g", "h"}; //Speichern die Buchstaben der Spalte
 		
@@ -45,8 +49,12 @@ public final class Coordinate {
 		return spaltenBuchstaben + zeileNummer; //z.B file = 1; rank = 2. liefert "b3" als String zurueck
 	}
 
-	// TODO: Aufgabe 1.3
+	/**
+	 * Ein Method, um ein Schachfigur zu checken
+	 * @return ein boolean Typ, der sagt ob Figur auf dem Brett steht
+	 */
 	
+	// TODO: Aufgabe 1.3
 	public boolean isOnBoard() {
 		if(file < 0 || file > 7 || rank < 0 || rank > 7) {
 			return false;
@@ -54,8 +62,12 @@ public final class Coordinate {
 		return true;
 	}
 
-	// TODO: Aufgabe 1.4
+	/**
+	 * Eine Formatierung in algebraische Schach Notation.
+	 * @return Wenn diese Method aufgerueft, es liefert ein algebraic Notation zurueck
+	 */
 	
+	// TODO: Aufgabe 1.4
 	@Override
 	public String toString() {
 		return getAlgebraicNotation();
