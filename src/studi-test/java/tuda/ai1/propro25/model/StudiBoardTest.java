@@ -50,6 +50,11 @@ public class StudiBoardTest {
 	@Test
 	void testBlackPiecePositions() {
 		// TODO: Aufgabe 4
+		assertEquals(new Rook(Color.BLACK), board.getPiece(getCoordinate("a8")));
+		assertEquals(new Knight(Color.BLACK), board.getPiece(getCoordinate("c5")));
+		assertEquals(new Pawn(Color.BLACK), board.getPiece(getCoordinate("d7")));
+		assertEquals(new King(Color.BLACK), board.getPiece(getCoordinate("e8")));
+		assertEquals(new Pawn(Color.BLACK), board.getPiece(getCoordinate("g7")));
 	}
 
 	/**
@@ -59,6 +64,9 @@ public class StudiBoardTest {
 	@Test
 	void testRank3Empty() {
 		// TODO: Aufgabe 4
+		for(int i = 0; i < 8; i++) {
+			assertEquals(null, board.getPiece(i, 3));
+		}
 	}
 
 	/**
@@ -76,6 +84,12 @@ public class StudiBoardTest {
 	@Test
 	void testCastlingAvailability() {
 		// TODO: Aufgabe 4
+				
+		CastlingAvailability whiteCastling = new CastlingAvailability(true, false, false, false);
+		CastlingAvailability blackCastling = new CastlingAvailability(false, false, false, true);
+		
+		assertEquals(whiteCastling.isAnyAvailable(), true);
+		assertEquals(blackCastling.isAnyAvailable(), true);
 	}
 
 	/**
@@ -84,6 +98,9 @@ public class StudiBoardTest {
 	@Test
 	void testCurrentPlayerColor() {
 		// TODO: Aufgabe 4
+		Player currentPlayer = board.getCurrentPlayer();
+		
+		assertEquals(currentPlayer.getColor() == Color.BLACK, true);
 	}
 
 }
