@@ -3,6 +3,8 @@ package tuda.ai1.propro25.ai;
 
 import java.util.Comparator;
 import tuda.ai1.propro25.model.Move;
+import tuda.ai1.propro25.model.MoveType;
+import tuda.ai1.propro25.model.piece.Piece;
 
 /**
  * Ein Comparator, der zwei Spielzüge anhand ihrer Bewertung vergleicht. Ein Zug
@@ -16,13 +18,35 @@ class MoveComparator implements Comparator<Move> {
 	 * der Umwandlung ist der Wert des ursprünglichen Bauern wieder abzuziehen. Ist
 	 * der Zug weder Schlag noch Umwandlung, ist die Bewertung 0.
 	 * 
-	 * @param move
-	 *            der zu bewertende Zug
+	 * @param move der zu bewertende Zug
 	 * @return die Bewertung dieses Zugs
 	 */
 	int scoreMove(Move move) {
 		// TODO: Aufgabe 5.1
-		return 0;
+		if(move == null) {
+			throw new IllegalArgumentException("Move cannot be NULL.");
+		}
+		
+		int score = 0;
+		MoveType type = move.getType();
+		
+		// Value of the captured piece is added if the move is a capture!
+		if(type == MoveType.CAPTURE || type == MoveType.EN_PASSANT || type == MoveType.CAPTURE_PROMOTION) {
+			Piece captured = move.getInvolvedPiece();
+			if(captured != null) {
+				score += captured.getValue();
+			}
+		}
+		
+		// Add value of promoted piece minus the pawn's value (1) if it's a promotion!
+		if(type == MoveType.PROMOTION || type == MoveType.CAPTURE_PROMOTION) {
+			Piece promoted = move.getPromotionPiece();
+			if(promoted != null) {
+				score += promoted.getValue() - 1;
+			}
+		}
+		
+		return score;
 	}
 
 	/**
