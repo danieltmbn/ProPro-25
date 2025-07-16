@@ -63,6 +63,18 @@ class MoveComparator implements Comparator<Move> {
 	@Override
 	public int compare(Move move1, Move move2) {
 		// TODO: Aufgabe 5.2
-		return 0;
+		//Check if the parameter is null
+		if(move1.equals(null) || move2.equals(null)) {
+			throw new IllegalArgumentException("Both parameter can't be null!");
+		}
+		
+		//comparing two move with scoreMove method from Aufgabe 5.1
+		if(scoreMove(move1) > scoreMove(move2)) {
+			return 1; // 1 means move1 "bigger" than move2
+		} else if(scoreMove(move1) < scoreMove(move2)) {
+			return -1; // -1 means move 1 "smaller" than move 2
+		} else {
+			return 0; //if not, then move1 and move2 is equal and we return 0
+		}
 	}
 }
