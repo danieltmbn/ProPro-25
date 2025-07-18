@@ -50,16 +50,16 @@ public class FENSerializer {
 		
 		StringBuilder fen = new StringBuilder();
 
-	   
+	   //In the following we just loop from the 8th rank to the bottom rank 1!!
 	    for (int rank = 7; rank >= 0; rank--) {
-	        int empty = 0;
+	        int empty = 0;//counter
 
 	       
 	        for (int file = 0; file < 8; file++) {
 	            Piece piece = board[file][rank];
 
 	            if (piece == null) {
-	                empty++; 
+	                empty++; //counting the empty spaces
 	            } else {
 	                if (empty > 0) {
 	                    fen.append(empty); 
@@ -70,11 +70,11 @@ public class FENSerializer {
 	        }
 
 	        if (empty > 0) {
-	            fen.append(empty); 
+	            fen.append(empty); //remaining empty blocks written here
 	        }
 
 	        if (rank > 0) {
-	            fen.append('/'); 
+	            fen.append('/'); //separating them
 	        }
 	    }
 
