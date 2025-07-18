@@ -56,7 +56,7 @@ public final class Coordinate {
 	
 	// TODO: Aufgabe 1.3
 	public boolean isOnBoard() {
-		if(file < 0 || file > 7 || rank < 0 || rank > 7) {
+		if(file < 0 || file > 7 || rank < 0 || rank > 7) { //Wenn entweder file oder rank auserhalb der Brett lieg
 			return false;
 		}
 		return true;

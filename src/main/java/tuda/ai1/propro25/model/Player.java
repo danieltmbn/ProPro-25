@@ -16,6 +16,7 @@ public class Player {
 	
 	public Player(String name, Color color, int remainingMilliseconds) {
 		
+		//Uberprueft ob eine der Parameter eine unmoegliche Wert uebergeben
 		if(name == null || name =="" || color == null || remainingMilliseconds < 0) {
 			throw new IllegalArgumentException("Name und color kann nicht null sein und remainingMilliseconds muss groesser als 0!");
 		}
@@ -61,9 +62,9 @@ public class Player {
 	// TODO: Aufgabe 1.7
 	public void setRemainingTime(int time) {
 		if(time < 0) {
-			throw new IllegalArgumentException("Parameter time darf nicht negativ sein!");
-		}
-		this.remainingMilliseconds = time;
+			throw new IllegalArgumentException("Parameter time darf nicht negativ sein!"); //Wenn das Parameter Zeit negativ ist, wirf ein
+		}																				   //IllegalArgumentException
+		this.remainingMilliseconds = time; //Setze den uebrigen Zeit
 	}
 
 	/**

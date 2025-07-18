@@ -19,7 +19,7 @@ public class Knight extends Piece {
 	 * @param color Die Farbe des Figurs
 	 */
 	public Knight(Color color) {
-		super(color, 3);
+		super(color, 3); //Ein Constructor von klasse Piece (Elternklasse) ruffen
 	}
 
 	// TODO: Aufgabe 2.2
